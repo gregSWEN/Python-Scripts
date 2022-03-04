@@ -1,0 +1,1 @@
+{"": "What is not a valid type definition of a structure that contains x and y coordinates as integers, and that can be used as shown for the variable named point? ", "python": "testdata", "asdfa": "testdata", "test": "testdata", "thisclibparod": "for key in data:\n                print(\"Key: \", key, \" Data: \", data[key])"}
