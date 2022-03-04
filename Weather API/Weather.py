@@ -22,16 +22,20 @@ def format(data):
     return string
 
 def main():
-    city = input("Enter a city name: ")
-    request_url = f"{BASE_URL}?appid={API_KEY}&q={city}"
-    response = requests.get(request_url)
+    while(True):
+        city = input("Enter a city name or 'q' to quit: ")
+        if(city.lower() == 'q'):
+            print("We're sad to see you go...")
+            break;
+        request_url = f"{BASE_URL}?appid={API_KEY}&q={city}"
+        response = requests.get(request_url)
 
-    if response.status_code == 200:
-        data = response.json()
-        print(format(data))
-    else: 
-        code = response.status_code
-        print(f"{code} error occured.")
+        if response.status_code == 200:
+            data = response.json()
+            print(format(data))
+        else: 
+            code = response.status_code
+            print(f"{code} error occured.")
 
 
 if __name__ == "__main__":
